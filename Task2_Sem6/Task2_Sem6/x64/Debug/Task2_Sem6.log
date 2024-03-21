@@ -1,0 +1,8 @@
+﻿  Task2_Sem6.cpp
+C:\Users\Дима\Desktop\Язык Си\Task2_Sem6\Task2_Sem6.cpp(30,18): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Дима\Desktop\Язык Си\Task2_Sem6\Task2_Sem6.cpp(38,16): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Дима\Desktop\Язык Си\Task2_Sem6\Task2_Sem6.cpp(47,18): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Дима\Desktop\Язык Си\Task2_Sem6\Task2_Sem6.cpp(119,22): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Дима\Desktop\Язык Си\Task2_Sem6\Task2_Sem6.cpp(131,20): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Дима\Desktop\Язык Си\Task2_Sem6\Task2_Sem6.cpp(141,22): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  Task2_Sem6.vcxproj -> C:\Users\Дима\Desktop\Язык Си\Task2_Sem6\x64\Debug\Task2_Sem6.exe
