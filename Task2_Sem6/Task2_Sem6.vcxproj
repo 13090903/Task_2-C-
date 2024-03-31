@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="Bus.cpp" />
     <ClCompile Include="BusStop.cpp" />
+    <ClCompile Include="GeneralHandler.cpp" />
     <ClCompile Include="Handler.cpp" />
     <ClCompile Include="Passenger.cpp" />
     <ClCompile Include="Task2_Sem6.cpp" />
@@ -136,8 +137,12 @@
   <ItemGroup>
     <ClInclude Include="Bus.h" />
     <ClInclude Include="BusStop.h" />
+    <ClInclude Include="GeneralHandler.h" />
     <ClInclude Include="Handler.h" />
     <ClInclude Include="Passenger.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -30,6 +30,9 @@
     <ClCompile Include="Handler.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="GeneralHandler.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BusStop.h">
@@ -44,5 +47,11 @@
     <ClInclude Include="Handler.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="GeneralHandler.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
   </ItemGroup>
 </Project>

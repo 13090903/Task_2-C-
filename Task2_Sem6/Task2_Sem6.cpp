@@ -7,6 +7,7 @@
 #include <string>
 #include <algorithm>
 #include "Handler.h"
+#include "GeneralHandler.h"
 #include "Passenger.h"
 #include "BusStop.h"
 #include "Bus.h"
@@ -74,6 +75,7 @@ int main()
     cin >> n;
     Bus* bus = new Bus(1, n);
     Handler* handler = new Handler(bus);
+    GeneralHandler* gh = new GeneralHandler(handler);
     cout << "Bus stop list: \n";
     for (int i = 0; i < 3; i++) {
         cout << stops[i]->getName() << " ";
@@ -108,47 +110,17 @@ int main()
     for (int i = 0; i < cycles; i++) {
         for (BusStop* bs : handler->getRouteOfBus()) {
             cout << "Bus is now on the stop " << bs->getName() << "\n";
-            vector<Passenger*> ps;
-            for (Passenger* p : handler->getPassengersFromBus()) {
-                if (handler->getPassengerEndStop(p) != handler->getBusStopName(bs)) {
-                    ps.push_back(p);
-                }
-            }
-            handler->setPassengersToBus(ps);
-            int cap = handler->getBusCapacity() - handler->getBusPassengersAmount();
-            int size = handler->getPassengersFromBusStop(bs).size();
-            for (int j = 0; j < MIN(cap, size); j++) {
-                Passenger* p = handler->getPassengersFromBusStop(bs)[0];
-                handler->deleteFirstPassengerFromBusStop(bs);
-                handler->addPassengerToBus(p);
-            }
-            cout << "Passengers is now in bus: ";
-            for (Passenger* p : handler->getPassengersFromBus()) {
-                cout << handler->getPassengerNum(p) << " ";
-            }
-            cout << "\n";
+            handler->setPassengersToBus(gh->dropOffPassengersAtBusStop(bs));
+            gh->deletePassengersFromBus(bs);
+            gh->showPassengersInBus();
         }
         for (int l = bus->getRoute().size() - 1; l >= 0; l--) {
             cout << "Bus is now on the stop " << handler->getBusStop(l)->getName() << "\n";
             vector<Passenger*> ps;
-            for (Passenger* p : handler->getPassengersFromBus()) {
-                if (handler->getPassengerEndStop(p) != handler->getBusStopName(handler->getBusStop(l))) {
-                    ps.push_back(p);
-                }
-            }
-            handler->setPassengersToBus(ps);
-            int cap = handler->getBusCapacity() - handler->getBusPassengersAmount();
-            int size = handler->getPassengersFromBusStop(handler->getBusStop(l)).size();
-            for (int j = 0; j < MIN(cap, size); j++) {
-                Passenger* p = handler->getPassengersFromBusStop(handler->getBusStop(l))[0];
-                handler->deleteFirstPassengerFromBusStop(handler->getBusStop(l));
-                handler->addPassengerToBus(p);
-            }
+            handler->setPassengersToBus(gh->dropOffPassengersAtBusStop(handler->getBusStop(l)));
+            gh->deletePassengersFromBus(handler->getBusStop(l));
             cout << "Passengers is now in bus: ";
-            for (Passenger* p : handler->getPassengersFromBus()) {
-                cout << handler->getPassengerNum(p) << " ";
-            }
-            cout << "\n";
+            gh->showPassengersInBus();
         }
     }
     Bus* bus1 = new Bus(1, 5);
