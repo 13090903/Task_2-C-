@@ -19,7 +19,7 @@ vector<Passenger*> GeneralHandler::dropOffPassengersAtBusStop(BusStop* bs) {
     }
     return ps;
 }
-void GeneralHandler::deletePassengersFromBus(BusStop* bs) {
+void GeneralHandler::addPassengersToBus(BusStop* bs) {
     int cap = _handler->getBusCapacity() - _handler->getBusPassengersAmount();
     int size = _handler->getPassengersFromBusStop(bs).size();
     for (int j = 0; j < MIN(cap, size); j++) {

@@ -12,7 +12,7 @@ public:
 		_handler = handler;
 	}
 	vector<Passenger*> dropOffPassengersAtBusStop(BusStop* bs);
-	void deletePassengersFromBus(BusStop* bs);
+	void addPassengersToBus(BusStop* bs);
 	void showPassengersInBus();
 };
 
